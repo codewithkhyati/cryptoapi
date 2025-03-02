@@ -6,11 +6,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="top"
+        tools:context=".MainActivity"
+        tools:ignore="MissingConstraints">
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crypto"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="left" />
+
+    <!-- Account Value -->
+    <TextView
+        android:id="@+id/tvAccountValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Account Value: $10,000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        android:layout_gravity="left"
+        />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/linear1"
+        android:layout_gravity="center_horizontal"
+        tools:ignore="MissingConstraints">
+
+        <Button
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:layout_marginEnd="8dp"/>
+
+        <Button
+            android:id="@+id/btnReceive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Receive"/>
+    </LinearLayout>
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="56dp" />
+        app:layout_constraintTop_toBottomOf="@+id/linear2"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
